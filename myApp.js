@@ -8,6 +8,10 @@ const staticPath = __dirname + '/public';
 
 app.use('/public', express.static(staticPath));
 
+app.get('/json', (req, res) => {
+    res.json( { "message": "Hello json"});
+})
+
 app.get('/', (req, res) => {
     res.sendFile(sendPath);
 }) ;
