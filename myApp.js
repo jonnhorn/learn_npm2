@@ -3,13 +3,11 @@ let app = express();
 
 console.log("Hello World");
 
-/*
-app.get('/', (req, res) => {
-    res.send('Hello Express');
-}) ;
-*/
-
 const sendPath = __dirname + '/views/index.html';
+const staticPath = __dirname + '/public';
+
+app.use('/public', express.static(staticPath));
+
 app.get('/', (req, res) => {
     res.sendFile(sendPath);
 }) ;
