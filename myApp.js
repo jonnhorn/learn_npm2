@@ -1,9 +1,10 @@
-//require('dotenv').config();
+require('dotenv').config();
 
 let express = require('express');
 let app = express();
 
 console.log("Hello World");
+console.log("MESSAGE_STYLE: " + process.env.MESSAGE_STYLE);
 
 const sendPath = __dirname + '/views/index.html';
 const staticPath = __dirname + '/public';
