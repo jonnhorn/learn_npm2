@@ -25,6 +25,10 @@ app.get('/now', function(req, res, next) {
    //res.json({ "time": "good times" })
 });
 
+app.get('/:word/echo', function(req, res, next) {
+    res.json({'echo': req.params.word })
+})
+
 app.get('/json', (req, res) => {
     console.log("MESSAGE_STYLE: " + process.env.MESSAGE_STYLE);
     if(process.env.MESSAGE_STYLE === 'uppercase') {
