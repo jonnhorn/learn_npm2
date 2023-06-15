@@ -28,6 +28,9 @@ app.get('/now', function(req, res, next) {
 app.get('/:word/echo', function(req, res, next) {
     res.json({'echo': req.params.word })
 })
+app.get('/name', function(req, res, next) {
+    res.json({ 'name': req.query.first + ' ' + req.query.last });
+})
 
 app.get('/json', (req, res) => {
     console.log("MESSAGE_STYLE: " + process.env.MESSAGE_STYLE);
